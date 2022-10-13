@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { SearchIcon, Input, SearchF } from './SearchForm.styled';
 
 function SearchForm() {
   let [searchParams, setSearchParams] = useSearchParams();
@@ -19,10 +20,10 @@ function SearchForm() {
 
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
-        <input ref={inputForm} type="text" name="search" />
-        <button type="submit">Search</button>
-      </form>
+      <SearchF action="" onSubmit={handleSubmit}>
+        <button type="submit"><SearchIcon/></button>
+        <Input ref={inputForm} type="text" name="search" placeholder='enter part of the movie title'/>
+      </SearchF>
     </div>
   );
 }
