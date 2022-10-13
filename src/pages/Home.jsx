@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import {TrendingList} from "../components/TrendingList/TrendingList"
 import {fetchTrendingFilms} from "../servise/api";
-
+import { Title } from "./Home.styled";
 
 const Home = () => {
   const [trending, setTrending] = useState(null);
@@ -20,7 +20,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <h1>Trending today</h1>
+      <Title>Trending today</Title>
       {trending && <TrendingList trending={ trending }/>}
     </div>
   );

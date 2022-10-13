@@ -13,9 +13,10 @@ export const Item = styled.li`
 `;
 
 export const Button = styled.button`
+  display: flex;
+  margin: auto;
   padding: 8px 16px;
   border-radius: 4px;
-  // text-decoration: none;
   color: black;
   font-weight: 500;
   font-size: 16px;
