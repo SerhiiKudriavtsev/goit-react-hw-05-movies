@@ -1,10 +1,10 @@
 // import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {TrendingList} from "../components/TrendingList/TrendingList"
-import {fetchTrendingFilms} from "../servise/fetchTrendingFilms";
+import {fetchTrendingFilms} from "../servise/api";
 
 
-export const Home = () => {
+const Home = () => {
   const [trending, setTrending] = useState(null);
 
   useEffect(() => {
@@ -20,8 +20,10 @@ export const Home = () => {
   }, []);
   return (
     <div>
-      <h2>Trending today</h2>
+      <h1>Trending today</h1>
       {trending && <TrendingList trending={ trending }/>}
     </div>
   );
 };
+
+export default Home;

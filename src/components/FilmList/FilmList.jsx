@@ -1,13 +1,15 @@
 import { Link, useLocation } from 'react-router-dom';
-import { List, Item, Text } from './TrendingList.styled';
+import PropTypes from 'prop-types';
+import { List, Item, Text } from './FilmList.styled';
 
-export const TrendingList = ({ trending }) => {
+function FilmList({ movies }) {
   const IMG_URL = 'https://image.tmdb.org/t/p/w500';
   const location = useLocation();
+
   return (
     <div>
       <List>
-        {trending?.map(({id, title, poster_path, name} ) => {
+        {movies?.map(({ id, title, poster_path, name }) => {
           return (
             <Item key={id}>
               <Link to={`/movies/${id}`} state={{ from: location }}>
@@ -23,7 +25,18 @@ export const TrendingList = ({ trending }) => {
             </Item>
           );
         })}
-    </List>
+      </List>
     </div>
   );
 }
+
+FilmList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ),
+};
+
+export default FilmList;
