@@ -1,9 +1,9 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
-import { Link, useParams, useLocation, Route, Routes, useNavigate } from "react-router-dom";
+import { useParams, useLocation, Route, Routes, useNavigate } from "react-router-dom";
 // import * as API from '../servise/fetchTrendingFilms';
 import {fetchDetailFilms} from "../servise/api"
 // import { Container } from 'components/SharedLayout/SharedLayout.styled';
-import { List, Item, Button, LinkWrapper, LinkChoice, Container } from './MovieDetails.styled';
+import { List, Item, Button, LinkWrapper, LinkChoice, Container, StyledLink } from './MovieDetails.styled';
 // import { Cast } from "./Cast";
 // import { Reviews } from './Reviews';
 
@@ -70,10 +70,9 @@ const MovieDetails = () => {
         <LinkWrapper>
           <h3>Additional information</h3>
           <LinkChoice>
-            <Link style={{ textDecoration: 'none', color: 'black' }} to="cast">Cast</Link>
-            <Link style={{ textDecoration: 'none', color: 'black' }} to="reviews">Reviews</Link>
+            <StyledLink  to="cast">Cast</StyledLink>
+            <StyledLink  to="reviews">Reviews</StyledLink>
           </LinkChoice>
-          
         </LinkWrapper>
         <Suspense fallback={<p>Loading...</p>}>
           <Routes>

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const List = styled.ul`
   list-style: none;
@@ -32,10 +33,9 @@ export const LinkWrapper = styled.div`
   display: flex;
 
   flex-direction: column;
-  text-decoration: none;
+  // text-decoration: none;
   padding: 12px;
   font-weight: 500;
-  color: black;
   font-size: 22px;
   font-weight: 700;
   align-items: center;
@@ -48,15 +48,23 @@ export const LinkChoice = styled.a`
   gap: 20px;
   justify-content: center;
   text-decoration: none;
-  padding: 12px;
-  font-weight: 500;
+  // padding: 12px;
+  // font-weight: 500;
+  // font-size: 22px;
+  // font-weight: 700;
+  }
+`;
+
+export const StyledLink = styled(NavLink)`
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
   color: black;
-  font-size: 22px;
-  font-weight: 700;
+  font-weight: 500;
 
   &.active {
-    composes: link;
-    color: blue;
+    color: white;
+    background-color: orangered;
   }
 `;
 
